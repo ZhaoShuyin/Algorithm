@@ -8,19 +8,19 @@ import java.util.Arrays;
 public class BubbleSortDemo {
 
     public static void main(String[] args) {
-        int[] arr = {24, 69, 80, 57, 13};
-        System.out.println("排序前: " + Arrays.toString(arr));
+        int[] arr = {5, 4, 3, 2, 1};
+        System.out.println("冒泡排序前: " + Arrays.toString(arr));
         bubbleSort2(arr);
-        System.out.println("排序后: " + Arrays.toString(arr));
+        System.out.println("冒泡排序后: " + Arrays.toString(arr));
     }
 
     /**
-     * 冒泡排序
+     * 冒泡排序( 1, 2, 3, 4, 5 )
      */
     private static void bubbleSort2(int[] arr) {
         //首先遍历所有数据
         for (int y = 0; y < arr.length - 1; y++) {
-            //每个元素与之后元素对比,最小者置前
+            //前 y 个元素最大者置最后
             for (int x = 0; x < arr.length - 1 - y; x++) {
                 if (arr[x] > arr[x + 1]) {
                     int temp = arr[x];
@@ -28,14 +28,14 @@ public class BubbleSortDemo {
                     arr[x + 1] = temp;
                 }
             }
+            System.out.println("   <"+(arr.length - 1 - y)+" 次> 排序 "+ Arrays.toString(arr));
         }
 
     }
 
-    // 冒泡排序
+    // 冒泡排序( 1,2,3,4,5 )
     private static void bubbleSort(int[] arr) {
-
-        // 第一次排序
+        // 第一次排序()
         for (int x = 0; x < arr.length - 1 - 0; x++) {
             if (arr[x] > arr[x + 1]) {
                 int temp = arr[x];
@@ -43,7 +43,6 @@ public class BubbleSortDemo {
                 arr[x + 1] = temp;
             }
         }
-
         // 第二次排序
         for (int x = 0; x < arr.length - 1 - 1; x++) {
             if (arr[x] > arr[x + 1]) {
@@ -52,7 +51,6 @@ public class BubbleSortDemo {
                 arr[x + 1] = temp;
             }
         }
-
         // 第三次排序
         for (int x = 0; x < arr.length - 1 - 2; x++) {
             if (arr[x] > arr[x + 1]) {
@@ -61,7 +59,6 @@ public class BubbleSortDemo {
                 arr[x + 1] = temp;
             }
         }
-
         // 第四次排序
         for (int x = 0; x < arr.length - 1 - 3; x++) {
             if (arr[x] > arr[x + 1]) {
@@ -70,7 +67,6 @@ public class BubbleSortDemo {
                 arr[x + 1] = temp;
             }
         }
-
     }
 
     // 数组遍历的方法
